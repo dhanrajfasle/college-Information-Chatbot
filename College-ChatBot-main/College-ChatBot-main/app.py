@@ -17,7 +17,7 @@ api_key = os.getenv("GOOGLE_API_KEY")
 from google.generativeai import configure
 configure(api_key=api_key)
 
-# Function to load CSV data
+# Function to load CSV data 
 def load_csv_data(file_path):
     df = pd.read_csv(file_path)
     text = "\n".join(df.astype(str).apply(lambda x: " ".join(x), axis=1))
