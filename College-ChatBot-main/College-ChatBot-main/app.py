@@ -16,13 +16,13 @@ api_key = os.getenv("GOOGLE_API_KEY")
 # Configure Google Generative AI with the API key
 from google.generativeai import configure
 configure(api_key=api_key)
-
+  
 # Function to load CSV data 
 def load_csv_data(file_path):
     df = pd.read_csv(file_path)
     text = "\n".join(df.astype(str).apply(lambda x: " ".join(x), axis=1))
     return text
-
+   
 # Create a vector store with embeddings
 def create_vector_store(text):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
